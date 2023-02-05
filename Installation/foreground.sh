@@ -11,6 +11,11 @@ git clone https://github.com/Nordix/Meridio.git
 
 cd Meridio
 
+docker pull registry.gitlab.com/lionelj/meridio/kind-host:latest
+docker tag registry.gitlab.com/lionelj/meridio/kind-host:latest registry.nordix.org/cloud-native/meridio/kind-host:latest
+
 make -s -C docs/demo/scripts/kind/ KUBERNETES_VERSION="v1.26" KUBERNETES_IP_FAMILY="v1.26" NSM_VERSION="v1.7.1" 
 
 cd ..
+
+clear
