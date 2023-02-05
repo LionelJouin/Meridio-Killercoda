@@ -11,6 +11,7 @@ git clone https://github.com/Nordix/Meridio.git
 
 cd Meridio
 
-make -s -C test/e2e/environment/kind-operator/ environment operator wait wait-operator
+make -s -C docs/demo/scripts/kind/ KUBERNETES_VERSION="v1.26" KUBERNETES_IP_FAMILY="v1.26" NSM_VERSION="v1.7.1" 
 
-cd ..
+helm install meridio-crds https://artifactory.nordix.org/artifactory/cloud-native/meridio/Meridio-CRDs-v1.0.0.tgz --create-namespace --namespace red
+helm install meridio https://artifactory.nordix.org/artifactory/cloud-native/meridio/Meridio-v1.0.0.tgz --create-namespace --namespace red --set registry="registry.gitlab.com" --set repository="lionelj/meridio" --set nsm.repository="lionelj/meridio"
