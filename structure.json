@@ -1,13 +1,10 @@
 {
     "items": [
         {
-            "path": "docs/training/Playground"
+            "path": "scenario2"
         },
         {
-            "path": "docs/training/Installation"
-        },
-        {
-            "path": "docs/training/Traffic-Path"
+            "path": "docs/training"
         }
     ]
 }
